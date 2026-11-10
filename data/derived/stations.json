@@ -1,0 +1,30 @@
+{
+  "AM.R038E": {
+    "latitude": 7.95,
+    "longitude": -80.41,
+    "provider": "https://data.raspberryshake.org",
+    "channel": "EHZ",
+    "redistributable": false
+  },
+  "AM.RE9F3": {
+    "latitude": 7.68,
+    "longitude": -80.7,
+    "provider": "https://data.raspberryshake.org",
+    "channel": "EHZ",
+    "redistributable": false
+  },
+  "AM.SA041": {
+    "latitude": 8.87,
+    "longitude": -79.78,
+    "provider": "https://data.raspberryshake.org",
+    "channel": "EHZ",
+    "redistributable": false
+  },
+  "CU.BCIP": {
+    "latitude": 9.17,
+    "longitude": -79.84,
+    "provider": "https://service.earthscope.org",
+    "channel": "BHZ",
+    "redistributable": true
+  }
+}
