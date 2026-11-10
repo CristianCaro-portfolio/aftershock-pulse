@@ -1,0 +1,71 @@
+# 9 October 2026 M7.7 Panama (Azuero) sequence, USGS event us6000u18k
+name = "panama_2026"
+
+[mainshock]
+event_id = "us6000u18k"
+time = "2026-10-09T17:56:05.537Z"
+latitude = 7.6069
+longitude = -80.7566
+depth_km = 10.0
+magnitude = 7.7
+
+[window]
+start = "2026-10-06T00:00:00Z"
+end = "2026-10-20T00:00:00Z"
+chunk_hours = 6
+
+[region]
+# grid of candidate sources that covers the USGS aftershock zone with margin
+lat_min = 6.9
+lat_max = 8.3
+lon_min = -82.0
+lon_max = -79.7
+step_deg = 0.1
+depth_km = 10.0
+catalog_radius_km = 150.0
+
+[processing]
+target_rate_hz = 25.0
+freqmin_hz = 2.0
+freqmax_hz = 10.0
+
+[detection]
+sta_s = 1.0
+lta_s = 20.0
+trigger_on = 5.0
+trigger_off = 1.5
+min_duration_s = 1.0
+
+[association]
+min_stations = 3
+tolerance_s = 2.0
+min_separation_s = 6.0
+
+[[stations]]
+provider = "https://data.raspberryshake.org"
+network = "AM"
+station = "RE9F3"
+channel = "EHZ"
+redistributable = false
+
+[[stations]]
+provider = "https://data.raspberryshake.org"
+network = "AM"
+station = "R038E"
+channel = "EHZ"
+redistributable = false
+
+[[stations]]
+provider = "https://data.raspberryshake.org"
+network = "AM"
+station = "SA041"
+channel = "EHZ"
+redistributable = false
+
+[[stations]]
+provider = "https://service.earthscope.org"
+network = "CU"
+station = "BCIP"
+channel = "BHZ"
+location = "00"
+redistributable = true
