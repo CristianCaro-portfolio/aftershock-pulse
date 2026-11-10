@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install
+        run: pip install -e ".[dev]"
+      - name: Lint
+        run: ruff check .
+      - name: Tests
+        run: pytest
+      - name: Smoke run from the committed triggers
+        run: |
+          python -m aftershock_pulse --reports /tmp/reports --figures /tmp/figures analyze
+          test -s /tmp/reports/metrics.json
+          test -s /tmp/figures/results.png
