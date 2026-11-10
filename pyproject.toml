@@ -37,6 +37,9 @@ target-version = "py311"
 select = ["E", "F", "I", "B", "UP", "SIM"]
 ignore = ["SIM108"]
 
+[tool.ruff.lint.isort]
+known-first-party = ["aftershock_pulse"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
